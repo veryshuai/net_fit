@@ -8,8 +8,8 @@ function res = trunk(res)
     trans_b = res('trans_b');
 
     %truncate transitions
-    trans_s = trans_trunk(trans_b,dist_b)
-    trans_b = trans_trunk(trans_b,dist_b)
+    trans_s = trans_trunk(trans_b,dist_b);
+    trans_b = trans_trunk(trans_b,dist_b);
     
     %truncate distributions
     dist_s = [dist_s(1:20); sum(dist_s(21:end))];

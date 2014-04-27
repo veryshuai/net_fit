@@ -11,7 +11,7 @@ function Mb = buyer_stat_dist(p,v,thetab)
         Mb(i)=1/((i-1)*p('delta'))*(-v(i-2)*thetab*Mb(i-2)+v(i-1)*thetab*Mb(i-1)+(i-2)*p('delta')*Mb(i-1));
         if Mb(i)<0  %if hit negative mass, exit
             Mb(i)=0;
-            disp('WARNING: Error in buyer ergodic distribution estimation.   Encountered negative number')
+            %disp('WARNING: Error in buyer ergodic distribution estimation.   Encountered negative number')
             break
         end
     end

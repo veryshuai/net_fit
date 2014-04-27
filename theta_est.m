@@ -25,8 +25,6 @@ function [thetas, thetab, u, v, Ms, Mb] = theta_est(p)
         %update thetas
         [thetab_new, thetas_new] = upd_theta(v, Mb, u, p);
         
-        %print current theta
-        [norm(thetas_new-thetas), norm(thetab_new-thetab)]
     end
 
     % solve seller stationary distribution
