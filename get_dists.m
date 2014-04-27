@@ -1,4 +1,4 @@
-function dist_s, dist_b = get_dists(Ms, Mb)
+function [dist_s, dist_b] = get_dists(Ms, Mb)
 % returns the normalized distributions of clients for sellers and buyers
 
     Mbs=Mb(2:end)./sum(Mb(2:end));

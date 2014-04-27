@@ -7,11 +7,10 @@ clear;
 p = get_params();
 
 % Get thetas, policies, and stat. distributions
-[thetas, thetab, v, u, Ms, Mb] = theta_est(p);
+[thetas, thetab, u, v, Ms, Mb] = theta_est(p);
 
 % Get buyer and seller distributions
-[dist_s, dist_b] = get_dists(Ms, Mb)
+[dist_s, dist_b] = get_dists(Ms, Mb);
 
 % Get buyer and seller transitions
-[trans_s, trans_b] = get_trans(thetas, thetab, v, u)
-
+[trans_s, trans_b] = get_trans(p, thetas, thetab, u, v);

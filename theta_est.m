@@ -1,4 +1,4 @@
-function [thetas, thetab, Ms, Mb] = theta_est(p)
+function [thetas, thetab, u, v, Ms, Mb] = theta_est(p)
 % calls value function iterations, returns market equilibrium thetas
 
     %initial guesses, thetas
