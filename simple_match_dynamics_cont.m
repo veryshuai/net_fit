@@ -1,7 +1,5 @@
-%This is a script computing network dynamics of buyer-sellers in
-%continuous time
-
-clear;
+function [dist_s, dist_b, trans_s, trans_b] = solve_model(p)
+% Solves endogenous version of model
 
 % Get parameters 
 p = get_params();
