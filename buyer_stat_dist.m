@@ -4,7 +4,7 @@ function Mb = buyer_stat_dist(p,v,thetab)
     %initialize
     Mb=zeros(p('N')+1,1);
     
-    Mb(1)=1;   %normalize later
+    Mb(1)=1e12;   %normalize later
     Mb(2)=Mb(1)*v(1)*thetab/p('delta');
     %Mass of buyers with 2, 3, ...,N-1 sellers
     for i=3:1:p('N')

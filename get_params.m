@@ -13,7 +13,7 @@ p('Ns')=0.8;   %relative seller to buyer ratio
 %simple quatratic
 p('cb0')=1;  p('cb1')=2;
 p('cs0')=1;  p('cs1')=2;
-p('gam')=0;
+p('gam')=0.1;
 
 %profit function parameters for buyer (g) and seller-buyer pair (f)
 p('g')=0.95;
