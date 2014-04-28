@@ -2,10 +2,12 @@ function err = resid(x)
 % Returns the distance between data and model
 
     try
-    
+
         %read in new parameters
         p = get_params(x);
         
+        %display([keys(p);values(p)]')
+
         %solve model
         res = solve_model(p);
         
@@ -31,10 +33,10 @@ function err = resid(x)
         
         err = norm(simvec - datvec);
     
-    catch exception
+    catch
     
-        rethrow(exception)
+        display('WARNING:there was an error in residual evaluation')
         err = 1e12 %large number 
     
-    end %try/catch
+   end %try/catch
 end
