@@ -12,7 +12,15 @@ function [v, p] = buyers_problem(p, thetab)
     bound_const = 1/(p('rho')+p('N')*p('delta'));
     den_const = p('rho')+(1:1:p('N')-1)'*p('delta');
 
+    k = 0;
     while norm(Vb-Vb_new)>1e-6
+
+        %kill if too many iterations
+        k = k + 1;
+        if break_fun(k, 'buyers_problem.m', 1e4) == 1
+            break;
+        end
+
         Vb=Vb_new;
 
         %optimal search effort and value at boundaray

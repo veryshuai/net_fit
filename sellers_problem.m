@@ -4,7 +4,16 @@ function u = sellers_problem(p, thetas, thetab, v, Mb)
     profs=[1:1:p('N')]'.^p('f');
     Vs_new=profs./p('rho');
     Vs=zeros(p('N'),1);
+
+    k = 0;
     while norm(Vs-Vs_new)>1e-6
+
+        %kill if too many iterations
+        k = k + 1;
+        if break_fun(k, 'sellers_problem.m', 1e4) == 1
+            break;
+        end
+
         Vs=Vs_new;
         
         %start with boundary condition

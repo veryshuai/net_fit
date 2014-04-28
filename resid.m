@@ -1,4 +1,4 @@
-function err = resid(x)
+function [err, res, dat] = resid(x)
 % Returns the distance between data and model
 
     try
@@ -38,5 +38,16 @@ function err = resid(x)
         display('WARNING:there was an error in residual evaluation')
         err = 1e12 %large number 
     
-   end %try/catch
+    end %try/catch
+
+    % Check for imaginary numbers
+    if isreal(err) == 0
+        display('WARNING: imaginary numbers encountered in resid.m')
+        err = 1e12
+    end
+
+    % Print to file
+    print_results(x, err);
+
 end
+    

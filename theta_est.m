@@ -7,19 +7,18 @@ function [thetas, thetab, u, v, Ms, Mb] = theta_est(p)
     thetas=0;
     thetab=0;
     
-    k = 0
+    k = 0;
     while norm(thetas_new-thetas)>1e-4||norm(thetab_new-thetab)>1e-4
 
         %kill if too many iterations
-        k += 1
-        if k > 500
-            display('WARNING: Loop in model solution algorithm');
+        k = k + 1;
+        if break_fun(k, 'theta_est.m', 100) == 1
             break;
         end
     
         %update thetas
-        thetas=0.5*thetas+0.5*thetas_new;  
-        thetab=0.5*thetab+0.5*thetab_new;
+        thetas=0.6*thetas+0.4*thetas_new;  
+        thetab=0.6*thetab+0.4*thetab_new;
     
         %solve buyers problem
         [v, p] = buyers_problem(p, thetab);
