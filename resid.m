@@ -41,9 +41,9 @@ function [err, res, dat] = resid(x)
     end %try/catch
 
     % Check for imaginary numbers
-    if isreal(err) == 0
-        display('WARNING: imaginary numbers encountered in resid.m')
-        err = 1e12
+    if isreal(simvec) == 0
+        %display('WARNING: imaginary numbers encountered in resid.m')
+        err = 1e12;
     end
 
     % Print to file

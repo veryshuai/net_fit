@@ -1,7 +1,8 @@
 % This script calls the fit function for network project
 
 % Get initial condition
-x = [2.7784; 8.8761; 1.4058; 67.6611; 0.1807; 0.0316; 0.9733; 1.9612; 4.7510];
+
+x = [124.42238023059763918354; 35.01503827349180397732; 14.33831413666636933613; 70.29432805141259166248; 0.12883567475845017491; 0.90569436520929558210; 0.93772220670380734830; 1.91650701816526014554; 0.36642008716307922223];
 
 % Upper bound
 top = ones(size(x,1),1) * inf;
@@ -16,7 +17,7 @@ top(9) = 10; %alpha not too large
 %options = optimset('Algorithm','interior-point','Display','iter','TolX',1e-20);
 %res = fmincon(@(x) resid(x),x,[],[],[],[],zeros(size(x,1),1),top,[],options)
 
-% SIM ANNEAL
+%SIM ANNEAL
 options = saoptimset('Display','iter','DisplayInterval',1);
 [x,fval,exitflag,output] = simulannealbnd(@(x) resid(x),x,zeros(size(x,1),1),top,options);
 
