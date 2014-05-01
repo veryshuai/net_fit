@@ -17,3 +17,5 @@ function Mb = buyer_stat_dist(p,v,thetab)
     end
     Mb(p('N')+1)=v(p('N'))*thetab*Mb(p('N'))/(p('N')*p('delta'));
     Mb=Mb./sum(Mb); %normalize
+
+

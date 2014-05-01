@@ -23,5 +23,5 @@ function u = sellers_problem(p, thetas, thetab, v, Mb)
     end 
      
     EVs=sum(Vs.*Mb(1:p('N')));
-    u=(EVs*thetas/(p('cs0')*p('cs1'))).^(1/(p('cs1')-1));
+    u=max((EVs*thetas/(p('cs0')*p('cs1'))).^(1/(p('cs1')-1)),0);
 end
